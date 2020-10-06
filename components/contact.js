@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 export default function Contact () {
   return (
-    <ContactSection>
+    <ContactSection id='contact'>
       <ContactWrapper>
         <TextContent>
           <h3>Contact</h3>

@@ -9,7 +9,7 @@
   --grey-light: #c9c9c9;
   --black: #262626;
   --blue:#30A9DE;
-  --blue-dark: #30A9DE;
+  --blue-dark: #0e6f99;
   --green: #0B7A75;
   --green-dark: #053835;
   --red: #BB443A;
@@ -34,6 +34,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  border: none;
 }
 
 * {

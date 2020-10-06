@@ -9,7 +9,6 @@ export default function Navbar () {
           <Link href='#'>
             <Brand>
               <BrandLogo>Piotr Wiśniewski</BrandLogo>
-              <BrandDescription>WEB DEVELOPER</BrandDescription>
             </Brand>
           </Link>
         </NavbarWrapper>
@@ -56,16 +55,5 @@ const BrandLogo = styled.h3`
 
   @media (max-width: 575.98px) {
     font-size: 1.4rem;
-  }
-`
-
-const BrandDescription = styled.div`
-  padding-left: .5em;
-  color: var(--grey);
-  font-size: 1.2rem;
-  line-height: 1em;
-  text-transform: uppercase;
-  @media (max-width: 575.98px) {
-    font-size: 1rem;
   }
 `

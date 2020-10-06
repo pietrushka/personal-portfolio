@@ -7,6 +7,7 @@ import Projects from '../components/projects'
 import About from '../components/about'
 import TechStack from '../components/tech'
 import Contact from '../components/contact'
+import MessageSidePanel from '../components/message-panel'
 
 export default function Home () {
   return (
@@ -15,6 +16,7 @@ export default function Home () {
         <title>Piotr Wiśniewski</title>
       </Head>
       <ScrollBar />
+      <MessageSidePanel />
       <Navbar />
       <Hero />
       <Projects />

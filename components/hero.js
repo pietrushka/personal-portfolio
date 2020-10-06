@@ -5,9 +5,7 @@ export default function Hero () {
     <HeroSection>
       <HeroWrapper>
         <TextContent>
-          <h5>Piotr Wiśniewski</h5>
-          <h1>Frontend Developer</h1>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim illum deserunt corrupti, laudantium mollitia architecto adipisci in dolor quod expedita!</p>
+          <h1>Hi! I am <span>Piotr</span>, frontend developer foucused on providing value and self development</h1>
           <ButtonsContainer>
             <BtnMain name='projects' href='#projects'>View my work</BtnMain>
             <BtnSecondary name='about' href='#about'>Read about me</BtnSecondary>
@@ -42,73 +40,50 @@ const HeroWrapper = styled.div`
 `
 
 const TextContent = styled.div`
-  width: 50%;
-
-  h5 {
-    color: var(--blue);
-    margin-bottom: 1em;
-    font-size: 1.8rem;
-  }
+  width: 60%;
 
   h1 {
     color: var(--black);
-    margin-bottom: .5em;
-    font-size: 3.5rem;
+    margin-bottom: .25em;
+    font-size: 3rem;
     line-height: 1.1em;
-  }
 
-  p {
-    color: var(--grey-dark);
+    span {
+      color: var(--blue);
+
+      &:hover{
+        color: var(--blue-dark);
+      }
+    }
   }
 
   @media (max-width: 575.98px) {
 
 
-    h5 {
-      font-size: 1.2rem;
-      margin-bottom: .5em;
-    }
     h1 {
       font-size: 3rem;
       margin: 0 auto;
     }
-    p{
-      font-size: .9rem;
-    }
+
   }
 
   @media (max-width: 767.98px) {
     width: 100%;
     text-align: center;
-    h5 {
-      font-size: 1.4rem;
-      margin-bottom: .5em;
-    }
+
     h1 {
       font-size: 4rem;
       margin: 0 auto;
     }
-    p{
-      margin: 1em auto;
-      font-size: 1rem;
-      width: 85%;
-    }
   }
-  
-  @media (max-width: 991.98px) {
-    
-  }
-
-  @media (max-width: 1340px) {
-
-  }
-  `
+`
 
 const ButtonsContainer = styled.div`
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+
   @media (max-width: 767.98px) {
     justify-content: center;
   }
@@ -117,15 +92,14 @@ const ButtonsContainer = styled.div`
 `
 
 const BtnMain = styled.a`
-  margin-bottom: 10px;
   margin-right: 20px;
-  padding: 9px 15px;
+  padding: .6em 1em;
   color: white;
   background: var(--blue);
   border: 0;
   cursor: pointer;
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 1.2rem;
   font-weight: 700;
   border-radius: 22px;
   transition: all 350ms ease;
@@ -136,7 +110,7 @@ const BtnMain = styled.a`
 `
 
 const BtnSecondary = styled.a`
-  font-size: 14px;
+  font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 1px;
   color: var(--blue);
