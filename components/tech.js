@@ -139,8 +139,12 @@ const TechCard = styled.div`
   }
 
   @media (max-width: 575.98px) {
-    width: 100%;
-    height: 100%;
+    padding: .5rem;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
   }
 `
 

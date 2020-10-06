@@ -64,18 +64,6 @@ const TextContent = styled.div`
     }
   }
 
-  @media (max-width: 767.98px) {
-    h3{
-      font-size: 4rem;
-      margin: 0;
-    }
-
-    h5 {
-      font-size: 1.3rem;
-      margin: 1em 0;
-    }
-  }
-
   @media (max-width: 1100px) {
     width: 100%;
     text-align: center;
@@ -88,6 +76,30 @@ const TextContent = styled.div`
 
     h5 {
       font-size: 2rem;
+      margin: 1em 0;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    h3{
+      font-size: 4rem;
+      margin: 0;
+    }
+
+    h5 {
+      font-size: 1.3rem;
+      margin: 1em 0;
+    }
+  }
+
+  @media (max-width: 576px) {
+    h3{
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    h5 {
+      font-size: 1.1rem;
       margin: 1em 0;
     }
   }
@@ -123,5 +135,10 @@ const Link = styled.a`
   @media (max-width: 767.98px) {
     height: 125px;
     width: 125px;
+  }
+
+  @media (max-width: 576px) {
+    height: 100px;
+    width: 100px;
   }
 `

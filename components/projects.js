@@ -1,10 +1,9 @@
 
-import Link from 'next/link'
 import styled from '@emotion/styled'
 
 export default function Projects () {
   return (
-    <ProjectsSection>
+    <ProjectsSection id='projects'>
       <ProjectsWrapper>
 
         <Heading>

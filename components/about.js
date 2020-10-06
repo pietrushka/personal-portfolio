@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 export default function About () {
   return (
-    <AboutSection>
+    <AboutSection id='about'>
       <AboutWrapper>
         <Heading>
           <h5>Short introduction</h5>
