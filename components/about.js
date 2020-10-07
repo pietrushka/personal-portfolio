@@ -13,8 +13,11 @@ export default function About () {
           <img src='space.png' />
           <DescriptionContainer>
             <p>Hi, my name is Piotr Wiśniewski, a frontend developer, based in Poland.
-I've always been very keen on technology and business. At the age of fourteen, I bought Arduino Uno R3, it was my first contact with programming. After graduating high school I decided to learn web-development full-time.
+I've always been very keen on technology and business. At the age of 15, I bought Arduino Uno R3, it was my first contact with programming. After graduating high school I decided to learn web-development full-time.
             </p>
+            <ResumeLink href='https://drive.google.com/file/d/1CkiNFO3w4YF8-ISn61WtmMm19InlZwqT/view' target='_blank'>
+              Resume ➤
+            </ResumeLink>
           </DescriptionContainer>
 
         </ContentAbout>
@@ -109,8 +112,13 @@ const DescriptionContainer = styled.div`
   display: flex;
   align-items: center;
   line-height: 1.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   
   p {
+    display: block;
     color: var(--black);
     text-align: center;
   }
@@ -123,5 +131,23 @@ const DescriptionContainer = styled.div`
   @media (max-width: 991.98px) {
     font-size: 1.5rem;
     padding: .5em;
+  }
+`
+const ResumeLink = styled.a`
+  display: block;
+  font-size: 2rem;
+  padding: .5em;
+  color: var(--black);
+  border: 2px solid var(--black);
+  border-radius: .5em;
+  transition: all .3s;
+
+  &:hover {
+    color: white;
+    background: var(--black);
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: 1.5rem;
   }
 `
