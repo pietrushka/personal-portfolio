@@ -21,7 +21,7 @@ export default function Hero () {
 
 const HeroSection = styled.section`
   background: var(--bg-grey);
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,22 +57,19 @@ const TextContent = styled.div`
     }
   }
 
-  @media (max-width: 575.98px) {
-
-
-    h1 {
-      font-size: 3rem;
-      margin: 0 auto;
-    }
-
-  }
-
   @media (max-width: 767.98px) {
     width: 100%;
     text-align: center;
 
     h1 {
-      font-size: 4rem;
+      font-size: 3rem;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    h1 {
+      font-size: 2rem;
       margin: 0 auto;
     }
   }
@@ -81,13 +78,16 @@ const TextContent = styled.div`
 const ButtonsContainer = styled.div`
   margin-top: 3rem;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 
   @media (max-width: 767.98px) {
     justify-content: center;
   }
-
+  
+  @media (max-width: 575.98px) {
+    flex-direction: column;
+  }
   
 `
 
@@ -107,6 +107,11 @@ const BtnMain = styled.a`
   &:hover {
     background: var(--blue-dark);
   }
+
+  @media (max-width: 575.98px) {
+    margin-right: 0;
+    margin-bottom: .5em;
+  }
 `
 
 const BtnSecondary = styled.a`
@@ -125,6 +130,11 @@ const ScrollIconContainer = styled.div`
   width: 100%;
   margin-bottom: 3rem;
   position: relative;
+
+  @media (max-width: 575.98px) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
   
 `
 
