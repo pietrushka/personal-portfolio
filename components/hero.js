@@ -11,6 +11,14 @@ export default function Hero () {
             <BtnSecondary name='about' href='#about'>Read about me</BtnSecondary>
           </ButtonsContainer>
         </TextContent>
+        <ImageContent>
+          <PortraitContainer>
+            <PortraitBackground/> 
+            <PortraitRatio>
+              <Portrait src='portrait-piotr.jpg'/>
+            </PortraitRatio>
+          </PortraitContainer>
+        </ImageContent>
       </HeroWrapper>
       <ScrollIconContainer>
         <ScrollIcon />
@@ -21,7 +29,7 @@ export default function Hero () {
 
 const HeroSection = styled.section`
   background: var(--bg-grey);
-  height: calc(100vh - 4rem);
+  min-height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,8 +42,8 @@ const HeroWrapper = styled.div`
   width: 80%;
   margin: auto 0;
 
-  @media (max-width: 575.98px) {
-    flex-direction: column
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
   }
 `
 
@@ -57,19 +65,21 @@ const TextContent = styled.div`
     }
   }
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 768px) {
     width: 100%;
     text-align: center;
+    margin-top: 2rem;
 
     h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin: 0 auto;
     }
   }
 
   @media (max-width: 575.98px) {
+    margin-top: 1rem;
     h1 {
-      font-size: 2rem;
+      font-size: 1.5rem;
       margin: 0 auto;
     }
   }
@@ -79,14 +89,15 @@ const ButtonsContainer = styled.div`
   margin-top: 3rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 768px) {
     justify-content: center;
   }
   
   @media (max-width: 575.98px) {
     flex-direction: column;
+    margin-top: 1rem;
   }
   
 `
@@ -124,6 +135,62 @@ const BtnSecondary = styled.a`
   &:hover {
     color: var(--blue-dark);
   }
+`
+
+const ImageContent = styled.div`
+  width: 40%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 575.98px) {
+    margin-top: 2rem;
+  }
+`
+
+const PortraitContainer = styled.div`
+  width: 65%;
+  position: relative;
+  @media (max-width: 768px) {
+    max-width: 300px;
+  }
+`
+
+const PortraitBackground = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -5%;
+  left: 5%;
+  background: var(--blue);
+`
+
+const PortraitRatio = styled.div`
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 112%;
+  height: 0;
+  overflow: hidden;
+  &:after {
+    width: 100%;
+    height: 100%;
+    background: var(--blue);
+    left: 5%;
+    content: '';
+  }
+`
+
+const Portrait = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `
 
 const ScrollIconContainer = styled.div`
