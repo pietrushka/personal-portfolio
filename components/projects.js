@@ -27,7 +27,7 @@ export default function Projects () {
             </ImageContainer>
           </ProjectCard>
 
-          <ProjectCard className='upper-card'>
+          <ProjectCard >
             <h3>sikory.</h3>
             <CardOverlay>
               <p>Fullstack project built with Next.js, Strapi, Stripe, Tailwind</p>
@@ -39,6 +39,21 @@ export default function Projects () {
             </CardOverlay>
             <ImageContainer>
               <img src='sikory.jpg' />
+            </ImageContainer>
+          </ProjectCard>
+
+          <ProjectCard >
+            <h3>2048.vs</h3>
+            <CardOverlay>
+              <p>Multiplayer 2048 game built with TypeScript, React, SocketIo</p>
+
+              <CodeLink href='https://github.com/pietrushka/2048-multiplayer-client'>
+                <span>View code <img src='github.png' /></span>
+              </CodeLink>
+              <DemoLink href='https://distracted-lalande-e608f0.netlify.app/'>Demo ➤</DemoLink>
+            </CardOverlay>
+            <ImageContainer>
+              <img src='2048-vs.jpg' />
             </ImageContainer>
           </ProjectCard>
         </ProjectsContainer>
@@ -124,17 +139,13 @@ const ProjectsContainer = styled.div`
 const ProjectCard = styled.div`
   letter-spacing: 1px;
   position: relative;
-  margin-top: 3.5rem;
+  margin-top: 3.5rem ;
   width: 100%;
   display: flex;
   flex-direction: column;
   background-color: var(--bg-grey);
   border-radius: 1rem;
   padding: 1rem;
-
-  &.upper-card {
-    margin-top: -5rem
-  }
 
   h3 {
     font-size: 3rem;

@@ -15,7 +15,7 @@ export default function About () {
             <p>Hi, my name is Piotr Wiśniewski, a frontend developer, based in Poland.
 I've always been very keen on technology and business. At the age of 15, I bought Arduino Uno R3, it was my first contact with programming. After graduating high school I decided to learn web-development full-time.
             </p>
-            <ResumeLink href='https://drive.google.com/file/d/1CkiNFO3w4YF8-ISn61WtmMm19InlZwqT/view' target='_blank'>
+            <ResumeLink href='https://drive.google.com/file/d/1DAnRVjKhpqo4BvT4D0QiP9gX4aGzB4gw/view?usp=sharing' target='_blank'>
               Resume ➤
             </ResumeLink>
           </DescriptionContainer>
