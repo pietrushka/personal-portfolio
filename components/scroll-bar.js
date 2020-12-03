@@ -28,7 +28,7 @@ const ProgressBar = styled.div`
   right: 0;
   width: 8px;
   height: 0;
-  background: var(--blue);
+  background: var(--blue-dark);
 
 `
 const ScrollPath = styled.div`

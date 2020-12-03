@@ -62,7 +62,7 @@ export default function TechStack () {
 
 const TechSection = styled.section`
   padding-top: 2rem;
-  background: var(--green);
+  background: var(--yellow-light);
   padding-bottom: 5rem;
 `
 
@@ -80,7 +80,7 @@ const Heading = styled.div`
   height: auto;
   margin-left: 30px;
   h5 {
-    color: var(--green-dark);
+    color: var(--yellow-dark);
     margin-bottom: .5em;
     font-size: 2rem;
   }
@@ -131,7 +131,7 @@ const TechCard = styled.div`
   p {
     font-size: 1.2rem;
     padding: 5px;
-    color: var(--grey-dark);
+    color: var(--yellow-dark);
   }
 
   &:hover {

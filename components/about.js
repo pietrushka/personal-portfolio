@@ -29,7 +29,7 @@ I've always been very keen on technology and business. At the age of 15, I bough
 }
 
 const AboutSection = styled.section`
-  background: var(--red);
+  background: var(--blue-light);
   padding: 4rem 0;
   @media (max-width: 575.98px) {
     padding: 4rem 0;
@@ -50,7 +50,7 @@ const Heading = styled.div`
   height: auto;
   margin-left: 30px;
   h5 {
-    color: var(--red-dark);
+    color: var(--blue-dark);
     margin-bottom: .5em;
     font-size: 2rem;
   }
@@ -108,7 +108,7 @@ const DescriptionContainer = styled.div`
   padding: .75em;
   font-size: 1.75rem;
   border-radius: .75em;
-  background: var(--bg-grey);
+  background: var(--grey);
   display: flex;
   align-items: center;
   line-height: 1.2em;

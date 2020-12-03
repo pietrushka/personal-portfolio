@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import styled from '@emotion/styled'
 
+import {Layout} from './layout'
+
 export default function Projects () {
   return (
     <ProjectsSection id='projects'>
-      <ProjectsWrapper>
+      <Layout>
 
         <Heading>
           <h5>SELECTED PROJECTS</h5>
@@ -18,7 +20,7 @@ export default function Projects () {
             <CardOverlay>
               <p>Fullstack project built with React, SocketIo, Express, MongoDB</p>
               <CodeLink href='https://github.com/pietrushka/shared-workspace-client'>
-                <span>View code <img src='github.png' /></span>
+                View code <img src='github.png' />
               </CodeLink>
               <DemoLink href='https://wideboard.netlify.app/'>Demo ➤</DemoLink>
             </CardOverlay>
@@ -31,7 +33,7 @@ export default function Projects () {
               <p>Fullstack project built with Next.js, Strapi, Stripe, Tailwind</p>
 
               <CodeLink href='https://github.com/pietrushka/ecommerce-watches-next.js'>
-                <span>View code <img src='github.png' /></span>
+                View code <img src='github.png' />
               </CodeLink>
               <DemoLink href='https://sikory.vercel.app/'>Demo ➤</DemoLink>
             </CardOverlay>
@@ -44,7 +46,7 @@ export default function Projects () {
               <p>Multiplayer 2048 game built with TypeScript, React, SocketIo</p>
 
               <CodeLink href='https://github.com/pietrushka/2048-multiplayer-client'>
-                <span>View code <img src='github.png' /></span>
+                View code <img src='github.png' />
               </CodeLink>
               <DemoLink href='https://distracted-lalande-e608f0.netlify.app/'>Demo ➤</DemoLink>
             </CardOverlay>
@@ -57,109 +59,87 @@ export default function Projects () {
               <p>Landing page with contact form built with Next.js</p>
 
               <CodeLink href='https://github.com/pietrushka/airsoftium-page'>
-                <span>View code <img src='github.png' /></span>
+                View code <img src='github.png' />
               </CodeLink>
               <DemoLink href='https://airsoftium.pl/'>Demo ➤</DemoLink>
             </CardOverlay>
             <Image src='/airsoftium-landing.jpg' width='1508' height='1008'/>
           </ProjectCard>
+        
         </ProjectsContainer>
-      </ProjectsWrapper>
+      </Layout>
 
     </ProjectsSection>
   )
 }
 
 const ProjectsSection = styled.section`
-  display: flex;
-  justify-content: center;
-  overflow: auto;
-  padding: 4rem 0;
-  background: var(--bg-brown);
-  @media (max-width: 767.98px) {
-    padding: 4rem 1rem;
-  }
+  background: var(--brown-light);
 `
-const ProjectsWrapper = styled.div`
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
-  @media (max-width: 767.98px) {
-    width: 90%
-  }
-`
 const Heading = styled.div`
-  width: 100%;
-  height: auto;
-  margin-left: 30px;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  
   h5 {
-    color: var(--brown);
-    margin-bottom: .25em;
-    font-size: 2rem;
+    color: var(--brown-dark);
+    font-size: 1.1em;
+    margin: 0;
   }
+  
   h3 {
-    color: white;
-    font-size: 4rem;
-    margin-top: .25em;
+    margin-top: .15em;
+    font-size: 2em;
+    color: var(--white);
     margin-bottom: 0;
   }
-  @media (max-width: 767.98px) {
-    margin-left: 0;
-    h5{
-      font-size: 1.2rem;
-      margin-top: 0;
-    }
 
-    h3 {
-      margin-top: .2em;
-      font-size: 3rem;
-      margin-bottom: 0;
-    }
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
   }
+
+  @media (min-width: 1024px) {
+    font-size: 1.75rem;
+    margin-bottom: 4rem;
+  } 
 `
 
 const ProjectsContainer = styled.div`
-  margin-top: 2em;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
   gap: 2rem;
+  grid-template-columns: 1fr;
 
-  @media (max-width: 767.98px) {
-    margin-top: 0;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    justify-items: center;
-    align-items: center;
-    gap: 0;
+  @media (min-width: 768px) {
+    width: 75%;
   }
 
-  @media (max-width: 991.98px) {
-    gap: 1rem;
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
   }
 `
 const ProjectCard = styled.div`
+  font-size: 1rem;
   letter-spacing: 1px;
   position: relative;
-  margin-top: 3.5rem ;
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-grey);
-  border-radius: 1rem;
-  padding: 1rem;
+  background-color: var(--grey);
+  border-radius: 1em;
+  padding: .5em;
+  min-height: 250px;
 
   h3 {
-    font-size: 3rem;
+    font-size: 1.5em;
+    margin: 0 0 .25em 0;
     text-align: center;
-    margin: .5em;
     z-index: 3;
+    line-height: 1.25em;
   }
 
   &::before {
@@ -181,143 +161,91 @@ const ProjectCard = styled.div`
     transform: scale(1.1);
   }
   &:hover div {
-     display: block;
+     display: flex;
   }
 
   &:hover::before {
     opacity: .9;
   }
 
-  @media (max-width: 767.98px) {
-    &.upper-card {
-      margin-top: 0rem
-    }
+  @media (min-width: 768px) {
+    font-size: 1.75rem;
+  }
 
+  @media (min-width: 1024px) {
+    height: 100%;
   }
 `
 
 const ImageContainer = styled.div`
   position: relative;
-  border-radius: 1rem;
+  border-radius: 1em;
   overflow: hidden;
   padding-top: 80%;
   height: 0;
-
-  img {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
 `
 
 const CardOverlay = styled.div`
-  width: 90%;
-  z-index: 3;
   display: none;
-  top: 35%;
   position: absolute;
+  font-size: inherit;
+  top: 3em;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  height: calc(100% - 3em);
   text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
 
   p {
-    color: white;
-    font-size: 1.5rem;
-    margin: 2em;
-  }
-
-  @media (max-width: 575.98px) {
-    p {
-      margin: 1em 0;
-      font-size: 1rem;
-    }
-  }
-
-  @media (max-width: 767.98px) {
-    p {
-      margin: 2em 0;
-      font-size: 1.2rem;
-    }
-  }
-
-  @media (max-width: 991.98px) {
-    p {
-      margin: .5em 0;
-      font-size: 1.2rem;
-    }
-  }
-
-  @media (max-width: 1199.98px) {
-     p {
-      margin: 1em 0;
-      font-size: 1.5rem;
-    }
+    color: var(--white);
+    font-size: 1em;
+    margin: 0;
   }
 `
 
 const CodeLink = styled.a`
+  position: relative;
+  margin: 0 auto;
+  color: var(--black);
+  font-weight: 700;
+  background: white;
+  font-size: 1.25em;
+  border: 3px solid white;
+  border-radius: 1em;
+  cursor: pointer;
+  padding: .15em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
 
-  span {
-    margin: 0 auto;
-    color: var(--black);
-    font-weight: 700;
+  img {
+    margin-left: .5rem;
     background: white;
-    font-size: 1.5rem;
-    position: relative;
-    border: 3px solid white;
-    padding: .4em;
-    border-radius: 1em;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
+    padding: .1em;
+    border-radius: 50%;
+  }
 
-    img {
-      margin-left: .5rem;
-      background: white;
-      padding: .1rem;
-      border-radius: 50%;
-    }
     &:hover {
       background: var(--black);
-      color: white;
+      color: var(--white);
     }
-
-    @media (max-width: 575.98px) {
-      font-size: 1rem;
-      padding: .2em;
-      border: 2px solid white;
-    }
-
-    @media (max-width: 991.98px) {
-      font-size: 1rem;
-    }
-
-    @media (max-width: 1199.98px) {
-      width: 70%;
-      font-size: 1.5rem;
-    }
-  }
+  
 `
 
 const DemoLink = styled.a`
-  display: block;
-  margin: 1rem;
-  font-size: 1.5rem;
+  margin: 0 auto;
+  font-size: 1.25em;
   color: white;
   cursor: pointer;
   position: relative;
   transition: .1s linear;
+  width: fit-content;
+  margin-bottom: 1em;
 
   &:hover {
     transform: scale(1.1);
   }
-
-  @media (max-width: 991.98px) {
-    font-size: 1.25rem;
-  }
-
-  @media (max-width: 1199.98px) {}
 `

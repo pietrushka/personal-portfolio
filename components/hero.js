@@ -27,7 +27,7 @@ export default function Hero () {
 }
 
 const HeroSection = styled.section`
-  background: var(--bg-grey);
+  background: var(--grey);
   min-height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@ const TextContent = styled.div`
     line-height: 1.1em;
 
     span {
-      color: var(--blue);
+      color: var(--blue-light);
 
       &:hover{
         color: var(--blue-dark);
@@ -105,7 +105,7 @@ const BtnMain = styled.a`
   margin-right: 20px;
   padding: .6em 1em;
   color: white;
-  background: var(--blue);
+  background: var(--blue-light);
   border: 0;
   cursor: pointer;
   letter-spacing: 1px;
@@ -128,7 +128,7 @@ const BtnSecondary = styled.a`
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 1px;
-  color: var(--blue);
+  color: var(--blue-light);
   transition: color 200ms ease;
 
   &:hover {
@@ -165,7 +165,7 @@ const PortraitBackground = styled.div`
   height: 100%;
   top: -5%;
   left: 5%;
-  background: var(--blue);
+  background: var(--blue-light);
 `
 
 const ScrollIconContainer = styled.div`
@@ -185,7 +185,7 @@ const ScrollIcon = styled.div`
   width: 20px;
   height: 35px;
   border-radius: 25px;
-  border: 3px solid var(--grey-dark);
+  border: 3px solid var(--grey);
 
   &::before {
     position: relative;
@@ -195,7 +195,7 @@ const ScrollIcon = styled.div`
     width: 4px;
     height: 6px;
     margin-left: 5px;
-    background: var(--grey-dark);
+    background: var(--grey);
     border-radius: 2px;
     opacity: 1;
     animation: slide 2s infinite;

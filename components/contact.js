@@ -56,11 +56,11 @@ const TextContent = styled.div`
   }
 
   h5 {
-    color: var(--grey);
+    color: var(--black);
     font-size: 1.5rem;
 
     span {
-      color: var(--grey-dark);
+      color: var(--black);
     }
   }
 
@@ -121,7 +121,7 @@ const Link = styled.a`
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  background: var(--grey-light);
+  background: var(--grey);
   height: 200px;
   width: 200px;
   
