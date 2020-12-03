@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styled from '@emotion/styled'
 
 export default function Hero () {
@@ -14,9 +15,7 @@ export default function Hero () {
         <ImageContent>
           <PortraitContainer>
             <PortraitBackground/> 
-            <PortraitRatio>
-              <Portrait src='portrait-piotr.jpg'/>
-            </PortraitRatio>
+              <Image src='/portrait-piotr.jpg' width='2483' height='2790'/>
           </PortraitContainer>
         </ImageContent>
       </HeroWrapper>
@@ -167,30 +166,6 @@ const PortraitBackground = styled.div`
   top: -5%;
   left: 5%;
   background: var(--blue);
-`
-
-const PortraitRatio = styled.div`
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding-top: 112%;
-  height: 0;
-  overflow: hidden;
-  &:after {
-    width: 100%;
-    height: 100%;
-    background: var(--blue);
-    left: 5%;
-    content: '';
-  }
-`
-
-const Portrait = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 `
 
 const ScrollIconContainer = styled.div`

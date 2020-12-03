@@ -1,4 +1,4 @@
-
+import Image from 'next/image'
 import styled from '@emotion/styled'
 
 export default function Projects () {
@@ -22,9 +22,7 @@ export default function Projects () {
               </CodeLink>
               <DemoLink href='https://wideboard.netlify.app/'>Demo ➤</DemoLink>
             </CardOverlay>
-            <ImageContainer>
-              <img src='wideboard.jpg' />
-            </ImageContainer>
+            <Image src='/wideboard.jpg' width='1040' height='802'/>
           </ProjectCard>
 
           <ProjectCard >
@@ -37,9 +35,7 @@ export default function Projects () {
               </CodeLink>
               <DemoLink href='https://sikory.vercel.app/'>Demo ➤</DemoLink>
             </CardOverlay>
-            <ImageContainer>
-              <img src='sikory.jpg' />
-            </ImageContainer>
+            <Image src='/sikory.jpg' width='781' height='678'/>
           </ProjectCard>
 
           <ProjectCard >
@@ -52,9 +48,20 @@ export default function Projects () {
               </CodeLink>
               <DemoLink href='https://distracted-lalande-e608f0.netlify.app/'>Demo ➤</DemoLink>
             </CardOverlay>
-            <ImageContainer>
-              <img src='2048-vs.jpg' />
-            </ImageContainer>
+            <Image src='/2048-vs.jpg' width='1229' height='957'/>
+          </ProjectCard>
+
+          <ProjectCard >
+            <h3>Airsoftum</h3>
+            <CardOverlay>
+              <p>Landing page with contact form built with Next.js</p>
+
+              <CodeLink href='https://github.com/pietrushka/airsoftium-page'>
+                <span>View code <img src='github.png' /></span>
+              </CodeLink>
+              <DemoLink href='https://airsoftium.pl/'>Demo ➤</DemoLink>
+            </CardOverlay>
+            <Image src='/airsoftium-landing.jpg' width='1508' height='1008'/>
           </ProjectCard>
         </ProjectsContainer>
       </ProjectsWrapper>
@@ -70,7 +77,7 @@ const ProjectsSection = styled.section`
   padding: 4rem 0;
   background: var(--bg-brown);
   @media (max-width: 767.98px) {
-    padding: 4rem 0;
+    padding: 4rem 1rem;
   }
 `
 const ProjectsWrapper = styled.div`
@@ -141,6 +148,7 @@ const ProjectCard = styled.div`
   position: relative;
   margin-top: 3.5rem ;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: var(--bg-grey);
