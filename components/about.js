@@ -1,114 +1,70 @@
+import Image from 'next/image'
 import styled from '@emotion/styled'
+import { Layout } from './layout'
+
+import SectionHeading from './section-headings'
 
 export default function About () {
   return (
     <AboutSection id='about'>
-      <AboutWrapper>
-        <Heading>
-          <h5>Short introduction</h5>
-          <h3>About me</h3>
-        </Heading>
+      <Layout>
+
+        <SectionHeading 
+          h5Text='Short introduction'
+          h3Text='About me'
+          color='blue'
+        />
 
         <ContentAbout>
-          <img src='space.png' />
+          <Image src='/space.png' width='2250' height='2250' /> 
           <DescriptionContainer>
-            <p>Hi, my name is Piotr Wiśniewski, a frontend developer, based in Poland.
-I've always been very keen on technology and business. At the age of 15, I bought Arduino Uno R3, it was my first contact with programming. After graduating high school I decided to learn web-development full-time.
+            <p>Hi, my name is Piotr Wiśniewski, a frontend developer, based in Poland.I've always been very keen on technology and business. At the age of 15, I bought Arduino Uno R3, it was my first contact with programming. After graduating high school I decided to learn web-development full-time.
             </p>
             <ResumeLink href='https://drive.google.com/file/d/1DAnRVjKhpqo4BvT4D0QiP9gX4aGzB4gw/view?usp=sharing' target='_blank'>
               Resume ➤
             </ResumeLink>
           </DescriptionContainer>
-
         </ContentAbout>
-
-      </AboutWrapper>
-
+      </Layout>
     </AboutSection>
   )
 }
 
 const AboutSection = styled.section`
   background: var(--blue-light);
-  padding: 4rem 0;
-  @media (max-width: 575.98px) {
-    padding: 4rem 0;
-  }
-`
-
-const AboutWrapper = styled.div`
-  width: 80%;
-  margin: 0 auto;
-  height: auto;
-  @media (max-width: 575.98px) {
-    width: 90%;
-  }  
-`
-
-const Heading = styled.div`
-  width: 100%;
-  height: auto;
-  margin-left: 30px;
-  h5 {
-    color: var(--blue-dark);
-    margin-bottom: .5em;
-    font-size: 2rem;
-  }
-  h3 {
-    color: white;
-    font-size: 4rem;
-    margin-top: .5em;
-    margin-bottom: 0;
-  }
-
-  @media (max-width: 575.98px) {
-    margin-left: 0;
-    h5{
-      font-size: 1.2rem;
-      margin-top: 0;
-    }
-
-    h3 {
-      margin-top: .2em;
-      font-size: 3rem;
-      margin-bottom: 0;
-    }
-  }
 `
 
 const ContentAbout = styled.div`
-  margin-top: 1em;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
-  width: 100%;
 
    img {
     object-fit: contain;
+    width: 100%;
+  }
+
+  @media (min-width: 578px) {
     width: 90%;
-  }
+    margin: 0 auto;
 
-  @media (max-width: 767.98px) {
-    margin-top: 0;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    align-items: center;
-  }
-
-  @media (max-width: 991.98px) {
     img {
-      width: 100%;
+      width: 65%;
     }
+  }
+
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
 `
 
 const DescriptionContainer = styled.div`
   width: 100%;
   padding: .75em;
-  font-size: 1.75rem;
-  border-radius: .75em;
-  background: var(--grey);
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   line-height: 1.2em;
@@ -118,36 +74,35 @@ const DescriptionContainer = styled.div`
 
   
   p {
+    padding: 0;
     display: block;
-    color: var(--black);
+    color: var(--white);
     text-align: center;
+    margin: 0;
   }
 
-  @media (max-width: 575.98px) {
-    font-size: 1.25rem;
-    padding: .75em;
+  @media (min-width: 575.98px) {
+    font-size: 1.1em;
   }
 
-  @media (max-width: 991.98px) {
-    font-size: 1.5rem;
-    padding: .5em;
+  @media (min-width: 1024px) {
+    font-size: 1.25em;
   }
 `
 const ResumeLink = styled.a`
   display: block;
-  font-size: 2rem;
-  padding: .5em;
-  color: var(--black);
-  border: 2px solid var(--black);
+  font-size: inherit;
+  color: var(--blue-light);
+  border: 3px solid var(--white);
+  background: var(--white);
+  margin-top: 1.5em;
   border-radius: .5em;
   transition: all .3s;
+  padding: .6em 1em;
+  border-radius: 1.5em;
 
   &:hover {
-    color: white;
-    background: var(--black);
-  }
-
-  @media (max-width: 575.98px) {
-    font-size: 1.5rem;
+    background: var(--blue-light);
+    color: var(--white);
   }
 `

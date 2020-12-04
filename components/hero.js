@@ -1,24 +1,28 @@
 import Image from 'next/image'
 import styled from '@emotion/styled'
 
+import {Layout} from './layout'
+
 export default function Hero () {
   return (
     <HeroSection>
-      <HeroWrapper>
-        <TextContent>
-          <h1>Hi! I am <span>Piotr</span>, frontend developer foucused on providing value and self development</h1>
-          <ButtonsContainer>
-            <BtnMain name='projects' href='#projects'>View my work</BtnMain>
-            <BtnSecondary name='about' href='#about'>Read about me</BtnSecondary>
-          </ButtonsContainer>
-        </TextContent>
-        <ImageContent>
-          <PortraitContainer>
-            <PortraitBackground/> 
-              <Image src='/portrait-piotr.jpg' width='2483' height='2790'/>
-          </PortraitContainer>
-        </ImageContent>
-      </HeroWrapper>
+      <Layout>
+        <HeroWrapper>
+          <TextContent>
+            <h1>Hi! I am <span>Piotr</span>, frontend developer foucused on providing value and self development</h1>
+            <ButtonsContainer>
+              <BtnMain name='projects' href='#projects'>View my work</BtnMain>
+              <BtnSecondary name='about' href='#about'>Read about me</BtnSecondary>
+            </ButtonsContainer>
+          </TextContent>
+          <ImageContent>
+            <PortraitContainer>
+              <PortraitBackground/> 
+                <Image src='/portrait-piotr.jpg' width='2483' height='2790'/>
+            </PortraitContainer>
+          </ImageContent>
+        </HeroWrapper>
+      </Layout>
       <ScrollIconContainer>
         <ScrollIcon />
       </ScrollIconContainer>
@@ -32,27 +36,30 @@ const HeroSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
 `
 
 const HeroWrapper = styled.div`
   display: flex;
-  font-size: 1rem;
   position: relative;
-  width: 80%;
+  width: 100%;
   margin: auto 0;
+  flex-direction: column-reverse;
 
-  @media (max-width: 768px) {
-    flex-direction: column-reverse;
+  @media (min-width: 1024px) {
+    flex-direction: row;
   }
 `
 
 const TextContent = styled.div`
-  width: 60%;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 1em;
 
   h1 {
+    font-size: 1.2em;
     color: var(--black);
     margin-bottom: .25em;
-    font-size: 3rem;
     line-height: 1.1em;
 
     span {
@@ -64,52 +71,48 @@ const TextContent = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
-    width: 100%;
-    text-align: center;
-    margin-top: 2rem;
-
-    h1 {
-      font-size: 2.5rem;
-      margin: 0 auto;
-    }
+  @media (min-width: 576px) {
+    font-size: 1.5rem;
   }
 
-  @media (max-width: 575.98px) {
-    margin-top: 1rem;
-    h1 {
-      font-size: 1.5rem;
-      margin: 0 auto;
-    }
+
+  @media (min-width: 1024px) {
+    font-size: 1.75rem;
+    width: 60%;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 `
 
 const ButtonsContainer = styled.div`
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: flex;
   align-items: center;
-  justify-content: start;
+  flex-direction: column;
+  
+  @media (min-width: 576px) {
+    margin-top: 3rem;
+  }
 
-  @media (max-width: 768px) {
-    justify-content: center;
+  @media (min-width: 1024px) {
+    margin-top: 2rem;
+    flex-direction: row;
   }
-  
-  @media (max-width: 575.98px) {
-    flex-direction: column;
-    margin-top: 1rem;
-  }
-  
+
 `
 
 const BtnMain = styled.a`
-  margin-right: 20px;
+  font-size: 1em;
+  margin-bottom: .75em;
   padding: .6em 1em;
   color: white;
   background: var(--blue-light);
   border: 0;
   cursor: pointer;
   letter-spacing: 1px;
-  font-size: 1.2rem;
   font-weight: 700;
   border-radius: 22px;
   transition: all 350ms ease;
@@ -118,14 +121,14 @@ const BtnMain = styled.a`
     background: var(--blue-dark);
   }
 
-  @media (max-width: 575.98px) {
-    margin-right: 0;
-    margin-bottom: .5em;
+  @media (min-width: 1024px) {
+    margin: 0;
+    font-size: .75em;
   }
 `
 
 const BtnSecondary = styled.a`
-  font-size: 1.1rem;
+  font-size: 1em;
   font-weight: 700;
   letter-spacing: 1px;
   color: var(--blue-light);
@@ -134,28 +137,41 @@ const BtnSecondary = styled.a`
   &:hover {
     color: var(--blue-dark);
   }
+
+  @media (min-width: 1024px) {
+    font-size: .75em;
+    margin-left: 1em;
+  }
 `
 
 const ImageContent = styled.div`
-  width: 40%;
+  width: 100%;
+  margin-top: .5rem;
   display: flex;
   justify-content:center;
   align-items: center;
-  @media (max-width: 768px) {
-    width: 100%;
+
+  @media (min-width: 575.98px) {
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
     margin-top: 3rem;
   }
 
-  @media (max-width: 575.98px) {
-    margin-top: 2rem;
+  @media (min-width: 1024px) {
+    width: 40%;
   }
 `
 
 const PortraitContainer = styled.div`
-  width: 65%;
+  width: 60%;
   position: relative;
-  @media (max-width: 768px) {
-    max-width: 300px;
+  max-width: 300px;
+
+  @media (min-width: 1200px) {
+    max-width: none;
+    width: 70%;
   }
 `
 
@@ -169,15 +185,12 @@ const PortraitBackground = styled.div`
 `
 
 const ScrollIconContainer = styled.div`
-  width: 100%;
-  margin-bottom: 3rem;
+  margin-top: .5rem;
   position: relative;
 
-  @media (max-width: 575.98px) {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-  
+  @media (min-width: 575.98px) {
+    margin-bottom: 3rem;
+  } 
 `
 
 const ScrollIcon = styled.div`
@@ -185,7 +198,7 @@ const ScrollIcon = styled.div`
   width: 20px;
   height: 35px;
   border-radius: 25px;
-  border: 3px solid var(--grey);
+  border: 3px solid var(--black);
 
   &::before {
     position: relative;
@@ -195,7 +208,7 @@ const ScrollIcon = styled.div`
     width: 4px;
     height: 6px;
     margin-left: 5px;
-    background: var(--grey);
+    background: var(--black);
     border-radius: 2px;
     opacity: 1;
     animation: slide 2s infinite;

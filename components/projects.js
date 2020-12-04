@@ -2,16 +2,18 @@ import Image from 'next/image'
 import styled from '@emotion/styled'
 
 import {Layout} from './layout'
+import SectionHeading from './section-headings'
 
 export default function Projects () {
   return (
     <ProjectsSection id='projects'>
       <Layout>
-
-        <Heading>
-          <h5>SELECTED PROJECTS</h5>
-          <h3>My work</h3>
-        </Heading>
+        
+        <SectionHeading 
+          h5Text='SELECTED PROJECTS'
+          h3Text='My work'
+          color='brown'
+        />
 
         <ProjectsContainer>
 
@@ -77,34 +79,6 @@ const ProjectsSection = styled.section`
   background: var(--brown-light);
 `
 
-const Heading = styled.div`
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  
-  h5 {
-    color: var(--brown-dark);
-    font-size: 1.1em;
-    margin: 0;
-  }
-  
-  h3 {
-    margin-top: .15em;
-    font-size: 2em;
-    color: var(--white);
-    margin-bottom: 0;
-  }
-
-  @media (min-width: 768px) {
-    font-size: 1.5rem;
-    margin-bottom: 3rem;
-  }
-
-  @media (min-width: 1024px) {
-    font-size: 1.75rem;
-    margin-bottom: 4rem;
-  } 
-`
-
 const ProjectsContainer = styled.div`
   margin: 0 auto;
   display: grid;
@@ -120,7 +94,7 @@ const ProjectsContainer = styled.div`
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
-    width: 100%;
+    width: 90%;
   }
 `
 const ProjectCard = styled.div`

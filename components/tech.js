@@ -1,14 +1,17 @@
 import styled from '@emotion/styled'
+import { Layout } from './layout'
+import SectionHeading from './section-headings'
 
 export default function TechStack () {
   return (
     <TechSection>
-      <TechWrapper>
+      <Layout>
 
-        <Heading>
-          <h5>My favorite technologies</h5>
-          <h3>Tech Stack</h3>
-        </Heading>
+        <SectionHeading 
+          h3Text='Tech Stack'
+          h5Text='My favorite technologies'
+          color='yellow'
+        />
 
         <CardContainer>
 
@@ -16,135 +19,84 @@ export default function TechStack () {
             <ImageContainer>
               <img src='html5.svg' />
             </ImageContainer>
-            <p>HTML</p>
+            <span>HTML</span>
           </TechCard>
 
           <TechCard>
             <ImageContainer>
               <img src='css3.svg' />
             </ImageContainer>
-            <p>CSS</p>
+            <span>CSS</span>
           </TechCard>
 
           <TechCard>
             <ImageContainer>
               <img src='js.svg' />
             </ImageContainer>
-            <p>JavaScript</p>
+            <span>JavaScript</span>
           </TechCard>
 
           <TechCard>
             <ImageContainer>
               <img src='react.svg' />
             </ImageContainer>
-            <p>React</p>
+            <span>React</span>
           </TechCard>
 
           <TechCard>
             <ImageContainer>
               <img src='nextjs.png' />
             </ImageContainer>
-            <p>Next.js</p>
+            <span>Next.js</span>
           </TechCard>
 
           <TechCard>
             <ImageContainer>
               <img src='expressjs.png' />
             </ImageContainer>
-            <p>Express.js</p>
+            <span>Express.js</span>
           </TechCard>
 
-        </CardContainer>
-      </TechWrapper>
+          </CardContainer>
+      </Layout>
     </TechSection>
   )
 }
 
 const TechSection = styled.section`
-  padding-top: 2rem;
   background: var(--yellow-light);
-  padding-bottom: 5rem;
-`
-
-const TechWrapper = styled.div`
-  width: 80%;
-  margin: 0 auto;
-  height: auto;
-  @media (max-width: 575.98px) {
-    width: 90%;
-  }
-`
-
-const Heading = styled.div`
-  width: 100%;
-  height: auto;
-  margin-left: 30px;
-  h5 {
-    color: var(--yellow-dark);
-    margin-bottom: .5em;
-    font-size: 2rem;
-  }
-  h3 {
-    color: white;
-    font-size: 4rem;
-    margin-top: .5em;
-  }
-  @media (max-width: 575.98px) {
-    margin-left: 0;
-    h5{
-      font-size: 1.2rem;
-    }
-
-    h3 {
-      margin-top: .2em;
-      font-size: 3rem;
-      margin-bottom: 0;
-    }
-  }
 `
 
 const CardContainer = styled.div`
+  width: 90%;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   justify-items: center;
   align-items: center;
-  width: 100%;
   grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
   gap: 1rem;
-  
-  @media (max-width: 575.98px) {
-    margin-top: 2rem;
-    gap: 1rem;
-  }
 `
 
 const TechCard = styled.div`
-  border-radius: 10px;
+  font-size: 1rem;
+  border-radius: .5em;
   width: 100%;
   height: 100%;
-  margin: 1.5%;
-  padding: 20px;
+  padding: .75em;
   background: white;
   text-align: center;
   transition: all 0.3s ease-in;
 
-  p {
-    font-size: 1.2rem;
-    padding: 5px;
-    color: var(--yellow-dark);
+  span {
+    display: block;
+    font-size: 1.2em;
+    color: var(--black);
+    margin-top: .5rem;
   }
 
   &:hover {
     transform: scaleX(1.05) scaleY(1.05);
-  }
-
-  @media (max-width: 575.98px) {
-    padding: .5rem;
-
-    p {
-      margin: 0;
-      padding: 0;
-    }
   }
 `
 
@@ -153,7 +105,8 @@ const ImageContainer = styled.div`
   display:flex;
   align-items:center;
   justify-content:center;
-    img {
+
+  img {
     max-height: 100%;
     max-width: 100%;
   }
