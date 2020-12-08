@@ -1,8 +1,20 @@
+import { useEffect, useRef } from 'react'
 import styled from '@emotion/styled'
 import { Layout } from './layout'
 import SectionHeading from './section-headings'
+import {gsap} from 'gsap'
+import {ScrollTrigger} from 'gsap/dist/ScrollTrigger'
+
+import {AnimateOnScroll} from '../utils/gsap-utils'
 
 export default function TechStack () {
+  const cardsRef = useRef(null)
+  gsap.registerPlugin(ScrollTrigger)
+  
+  useEffect(() => {
+    AnimateOnScroll(gsap, cardsRef.current)
+  }, [])
+
   return (
     <TechSection>
       <Layout>
@@ -13,7 +25,7 @@ export default function TechStack () {
           color='yellow'
         />
 
-        <CardContainer>
+        <CardContainer ref={cardsRef}>
 
           <TechCard>
             <ImageContainer>
