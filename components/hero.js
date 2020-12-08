@@ -1,15 +1,43 @@
+import {useRef, useEffect} from 'react'
 import Image from 'next/image'
 import styled from '@emotion/styled'
+import {gsap, TimelineLite, Power3} from 'gsap';
+
 
 import {Layout} from './layout'
 
 export default function Hero () {
+  const contentRef = useRef()
+  const tl = new TimelineLite({ delay: 0.8 })
+  
+  useEffect(() => {
+    const heading = contentRef.current.children[0].children[0].children[0].children[0]
+    const buttons = contentRef.current.children[0].children[1]
+    const picture = contentRef.current.children[1].children[0]
+
+    //Remove initial flash
+    gsap.to(contentRef.current, 1, {css: {visibility: 'visible'}})
+    tl.staggerFrom(heading, 1, {
+      y: 105,
+      opacity: 0,
+      ease: Power3.easeOut
+    }, 1, 'Start')
+      .from(buttons, 1, { y: 20, opacity: 0, ease: Power3.easeOut }, 0)
+      .from(picture, 1, { y: 40, opacity: 0, ease: Power3.easeOut }, 0)
+  }, [])
+
   return (
     <HeroSection>
       <Layout>
-        <HeroWrapper>
+        <HeroWrapper ref={contentRef} >
           <TextContent>
-            <h1>Hi! I am <span>Piotr</span>, frontend developer foucused on providing value and self development</h1>
+            <Heading>
+              <HeadingWall>
+                <div>
+                  Hi! I am <span>Piotr</span>, frontend developer foucused on providing value and self development
+                </div>
+              </HeadingWall>
+            </Heading>
             <ButtonsContainer>
               <BtnMain name='projects' href='#projects'>View my work</BtnMain>
               <BtnSecondary name='about' href='#about'>Read about me</BtnSecondary>
@@ -56,21 +84,6 @@ const TextContent = styled.div`
   font-size: 1rem;
   margin-top: 1em;
 
-  h1 {
-    font-size: 1.2em;
-    color: var(--black);
-    margin-bottom: .25em;
-    line-height: 1.1em;
-
-    span {
-      color: var(--blue-light);
-
-      &:hover{
-        color: var(--blue-dark);
-      }
-    }
-  }
-
   @media (min-width: 576px) {
     font-size: 1.5rem;
   }
@@ -85,6 +98,26 @@ const TextContent = styled.div`
     flex-direction: column;
     justify-content: center;
   }
+`
+
+const Heading =  styled.h1`
+  font-size: 1.2em;
+  color: var(--black);
+  margin-bottom: .25em;
+  line-height: 1.1em;
+
+  span {
+    color: var(--blue-light);
+
+    &:hover{
+      color: var(--blue-dark);
+    }
+  }
+`
+
+const HeadingWall = styled.div`
+  overflow: hidden;
+  margin: 0;
 `
 
 const ButtonsContainer = styled.div`
