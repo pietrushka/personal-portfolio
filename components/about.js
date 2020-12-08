@@ -1,10 +1,21 @@
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import styled from '@emotion/styled'
 import { Layout } from './layout'
+import {gsap} from 'gsap'
+import {ScrollTrigger} from 'gsap/dist/ScrollTrigger'
 
+import {AnimateOnScroll} from '../utils/gsap-utils'
 import SectionHeading from './section-headings'
 
 export default function About () {
+  const contentRef = useRef(null)
+  gsap.registerPlugin(ScrollTrigger)
+
+  useEffect(() => {
+    AnimateOnScroll(gsap, contentRef.current)
+  }, [])
+
   return (
     <AboutSection id='about'>
       <Layout>
@@ -15,11 +26,11 @@ export default function About () {
           color='blue'
         />
 
-        <ContentAbout>
+        <ContentAbout ref={contentRef}>
           <Image src='/space.png' width='2250' height='2250' /> 
           <DescriptionContainer>
-            <p>Hi, my name is Piotr Wiśniewski, a frontend developer, based in Poland.I've always been very keen on technology and business. At the age of 15, I bought Arduino Uno R3, it was my first contact with programming. After graduating high school I decided to learn web-development full-time.
-            </p>
+            <Description>Hi, my name is Piotr Wiśniewski, a frontend developer, based in Poland.I've always been very keen on technology and business. At the age of 15, I bought Arduino Uno R3, it was my first contact with programming. After graduating high school I decided to learn web-development full-time.
+            </Description>
             <ResumeLink href='https://drive.google.com/file/d/1DAnRVjKhpqo4BvT4D0QiP9gX4aGzB4gw/view?usp=sharing' target='_blank'>
               Resume ➤
             </ResumeLink>
@@ -54,9 +65,9 @@ const ContentAbout = styled.div`
     }
   }
 
-
   @media (min-width: 1024px) {
     grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     width: 100%;
   }
 `
@@ -72,23 +83,29 @@ const DescriptionContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  
-  p {
-    padding: 0;
-    display: block;
-    color: var(--white);
-    text-align: center;
-    margin: 0;
-  }
-
   @media (min-width: 575.98px) {
     font-size: 1.1em;
   }
 
   @media (min-width: 1024px) {
     font-size: 1.25em;
+    align-items: flex-start;
   }
 `
+
+const Description = styled.p`
+  font-size: inherit;
+  padding: 0;
+  display: block;
+  color: var(--white);
+  text-align: center;
+  margin: 0;
+
+  @media (min-width: 1024px) {
+    text-align: left;
+  }
+`
+
 const ResumeLink = styled.a`
   display: block;
   font-size: inherit;
