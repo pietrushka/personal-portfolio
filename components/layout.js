@@ -3,13 +3,13 @@ import styled from '@emotion/styled'
 export const Layout = styled.div`
   max-width: 1024px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 4rem;
 
   @media (min-width: 768px) {
-    padding: 3rem;
+    padding: 5rem;
   }
 
   @media (min-width: 1024px) {
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
   }
 `
