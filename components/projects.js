@@ -1,10 +1,37 @@
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import styled from '@emotion/styled'
+
+import {gsap} from 'gsap'
+import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
 
 import {Layout} from './layout'
 import SectionHeading from './section-headings'
 
 export default function Projects () {
+  const cardsRef = useRef(null)
+  gsap.registerPlugin(ScrollTrigger)
+
+  
+  useEffect(() => {
+    const cards = Array.from(cardsRef.current.children)
+    cards.forEach((card, idx) => {
+      gsap.fromTo(
+        card, 
+        {y: '+=75', opacity: 0}, 
+        {
+          y: 0, opacity: 1, 
+          stagger: 0.2, duration: 1, 
+          ease: 'easeInOut', 
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 50%'
+          }
+        }
+      )
+    })
+  }, []);  
+
   return (
     <ProjectsSection id='projects'>
       <Layout>
@@ -15,7 +42,7 @@ export default function Projects () {
           color='brown'
         />
 
-        <ProjectsContainer>
+        <ProjectsContainer ref={cardsRef}>
 
           <ProjectCard>
             <h3>wideboard.</h3>

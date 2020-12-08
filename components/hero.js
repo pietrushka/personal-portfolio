@@ -1,7 +1,7 @@
 import {useRef, useEffect} from 'react'
 import Image from 'next/image'
 import styled from '@emotion/styled'
-import {gsap, TimelineLite, Power3} from 'gsap';
+import {gsap, TimelineLite, Power3} from 'gsap'
 
 
 import {Layout} from './layout'
